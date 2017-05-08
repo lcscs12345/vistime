@@ -78,6 +78,8 @@ vistime <- function(data, events="event", start="start", end="end", groups="grou
   names(data)[names(data)==end] <- "end"
   names(data)[names(data)==events] <- "event"
   names(data)[names(data)==events] <- "event"
+  data$group <- as.hexmode(data$group)
+  data$event <- as.hexmode(data$event)
 
   # sort out the classes
   if(nrow(data) > 1){ data <- as.data.frame(sapply(data, as.character), stringsAsFactors=F) }
